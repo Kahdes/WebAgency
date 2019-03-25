@@ -1,0 +1,133 @@
+#navbar {
+	position: relative;
+	z-index: 100;
+
+	@include for-small-screen-up {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+	}
+
+	#nav-container {
+		display: flex;
+		flex-direction: column;
+		background-color: $white;		
+		transition: width $transition-time;
+
+		@include for-small-screen-up {
+			flex-direction: row;
+			justify-content: center;
+			height: $nav-height;
+			box-shadow: $nav-shadow;
+		}
+
+		& > * {
+			align-self: center;
+			text-align: center;			
+		}
+
+		input {
+			display: none;
+
+			& ~ #nav-hamburger .fa-caret-up {
+				display: none;
+			}
+
+			&:checked ~ #nav-hamburger {
+				background-color: $dark-gray !important;
+
+				.fa-caret-down {
+					display: none;
+				}
+
+				.fa-caret-up {
+					display: inherit;
+				}
+			}
+
+			&:checked ~ #nav-links {
+				display: flex;	
+			}
+		}
+
+		#nav-banner {
+			padding: 16px 0;
+
+			img {
+				width: $nav-banner-width;
+				height: $nav-banner-height;
+			}
+
+			@include for-small-screen-up {
+				width: 50%;
+				padding: 0;
+			}
+		}
+
+		#nav-links {
+			display: none;
+			flex-direction: column;
+			justify-content: center;
+			position: absolute;
+			top: 100%;
+			width: 100%;
+			font-size: $font-size-nav;
+			background-color: $light-transparent-white;
+
+			@include for-tablet-up {
+				width: $container-tablet-up !important;
+			}
+
+			@include for-small-screen-up {
+				display: flex;
+				flex-direction: row;
+				position: relative;
+				top: 0;
+			}
+
+			a {
+				padding: 5px 0;
+				color: $black;
+				text-decoration: none;
+				transition: background-color $transition-time;
+
+				&:hover {
+					background-color: $white;
+				}			
+
+				@include for-small-screen-up {
+					padding: $nav-link-padding-small;
+					border-top: $nav-link-border;
+					transition: padding $transition-time;
+
+					&:hover {
+						border-color: $light-blue;
+						background-color: $special-gray;
+					}
+				}
+
+				@include for-large-screen-up {
+					padding: $nav-link-padding-large;
+				}
+			}			
+		}		
+
+		#nav-hamburger {
+			width: 100%;
+			color: white;
+			font-size: 1.5em;
+			background-color: $light-gray !important;			
+			transition: background-color $transition-time;
+			cursor: pointer;
+
+			&:hover {
+				background-color: $dark-gray !important;
+			}
+
+			@include for-small-screen-up {
+				display: none;
+			}
+		}		
+	}	
+}

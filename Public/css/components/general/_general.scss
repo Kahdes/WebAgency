@@ -1,0 +1,55 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	min-width: $body-min-width;
+	margin: 0;
+	font-family: $font-family;
+	background-color: lightgray;	
+}
+
+main {
+	position: relative;
+	top: 0;
+	transition: width $transition-time;
+
+	@include for-small-screen-up {
+		padding-top: $nav-height;
+	}	
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	margin: 0;
+}
+
+.container {
+	margin: auto;
+	width: 100%;
+	max-width: $container-max-width;
+
+	@include for-tablet-up {
+		width: $container-tablet-up !important;
+	}
+
+	@include for-small-screen-up {
+		width: $container-small-screen-up !important;
+	}
+
+	@include for-large-screen-up {
+		width: $container-large-screen-up !important;
+	}
+}
+
+.section-container {
+	padding: $section-container-padding;
+}
+
+.anchor {
+	position: relative;
+	top: 0;
+
+	@include for-small-screen-up {
+		top: -$nav-height;
+	}
+}

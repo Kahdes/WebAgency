@@ -1,0 +1,41 @@
+input,
+textarea {
+	width: 100%;
+	padding: $forms-padding;
+	font-size: $font-size-contact;
+	font-family: $font-family;
+	font-weight: $font-bold;
+	border: 1px solid $dark-gray;
+	border-radius: $button-border-radius;
+	transition: background-color $transition-time;
+
+	&:focus {
+		background-color: $special-gray;
+		outline: 2px solid $light-blue;
+	}
+
+	&::placeholder {
+		color: $dark-gray;
+		font-size: $font-size-contact;
+		font-weight: $font-bold;
+	}
+}
+
+textarea {
+	resize: none;
+}
+
+%button {
+	padding: $button-padding;
+	color: $white;
+	font-size: $font-size-button;
+	border: none;
+	border-radius: $button-border-radius;
+	background-color: $light-blue;
+	transition: background-color $transition-time;					
+	cursor: pointer;
+
+	&:hover {
+		background-color: $blue;
+	}
+}

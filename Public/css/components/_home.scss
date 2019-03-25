@@ -1,0 +1,133 @@
+#home {
+	min-height: $home-min-height;
+
+	#slider {
+		position: relative;
+		height: 100%;
+
+		input {
+			display: none;
+
+			&#slider-prev:checked ~ #slide {
+				background-image: $home-bg-1;
+			}
+
+			&#slider-next:checked {
+
+				& ~ #slide {
+					background-image: $home-bg-2;
+				}
+
+				& ~ #progress {
+					width: 100%;
+				}				
+			}
+		}
+
+		label {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: absolute;			
+			bottom: 0;
+			width: 50%;
+			padding: 15px 0;
+			color: $white;
+			font-size: $font-size-label;			
+			background-color: $dark-transparent-black;
+			cursor: pointer;
+
+			&[for=slider-prev],
+			&[for=slider-next] {
+				@include for-small-screen-up {
+					top: 0;
+					width: 10%;
+					padding: 0;
+					background-color: transparent;
+					transition: all $transition-time;
+
+					&:hover {
+						background-color: $transparent-black;
+					}
+				}
+			}
+
+			&[for=slider-prev] {
+				left: 0;
+			}
+
+			&[for=slider-next] {
+				flex-direction: row-reverse;
+				right: 0;
+			}			
+		}
+
+		#slide {
+			min-height: $home-min-height !important;
+			background-repeat: no-repeat;
+			background-position: 80%;
+			transition: all $transition-time;
+
+			@include for-tablet-up {
+				background-position: 90%;
+			}
+
+			@include for-small-screen-up {
+				background-position: right;
+			}
+
+			#slide-text {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-content: center;				
+				width: 100%;
+				height: $home-min-height - 62px;
+				padding-top: 62px;
+				color: white;
+				text-align: center;
+				font-weight: $font-bold;
+				background-color: $transparent-black;
+
+				@include for-small-screen-up {
+					justify-content: center;
+					width: 40%;
+					height: $home-min-height;
+					margin: 0 15%;
+					padding-top: 0;
+					text-align: left;					
+					background-color: transparent;
+				}
+
+				h1 {
+					margin-bottom: 10px;				
+					font-size: 2.5em;
+					text-transform: uppercase;
+
+					span {
+						color: $special-blue;
+					}
+				}
+
+				button {
+					@extend %button;
+					width: 250px;
+
+					@include for-small-screen-up {
+						width: 125px;
+					}
+				}
+			}
+		}
+
+		#progress {
+			position: absolute;
+			width: 0%;
+			bottom: 0;
+			left: 0;
+			height: 5px !important;
+			background-color: $light-blue;
+			transition: all $transition-time;
+		}
+	}
+}

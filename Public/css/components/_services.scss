@@ -1,0 +1,118 @@
+#services {
+	background-color: $white;
+
+	#services-container {
+
+		#services-content {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-content: center;
+			align-items: center;
+			height: 100%;
+			margin-top: 50px;
+
+			@include for-tablet-up {
+				padding: 0;			
+			}
+
+			@include for-small-screen-up {
+				flex-direction: row;
+			}
+
+			#services-img,
+			#services-articles {
+				width: 100%;
+				text-align: justify;				
+			}
+
+			#services-img {
+				padding: 0;
+
+				@include for-small-screen-up {
+					padding: 0 0 0 50px;
+				}
+
+				@include for-large-screen-up {
+					padding: 0 0 0 150px;
+				}
+			}
+
+			#services-articles {
+				padding: 0 50px;
+
+				@include for-tablet-up {
+					padding: 0 100px;
+				}
+
+				@include for-small-screen-up {
+					padding: 0 150px 0 0;
+				}
+
+				@include for-large-screen-up {
+					padding: 0 150px 0 200px;
+				}
+
+				[id^=article-] {
+					position: relative;
+					display: flex;
+					align-items: center;
+
+					&:not(:last-of-type) {
+						margin-bottom: 40px;
+					}
+
+					.service-icon {
+						position: relative;						
+						left: -25px;						
+						border: 1px solid $dark-gray;
+						border-radius: 50%;
+
+						.circle {
+							position: absolute;
+							top: 21px;
+							right: -10px;
+							width: 20px;
+							height: 20px;
+							margin: 0;
+							color: white;
+							text-align: center;
+							opacity: 1;
+							background: $light-blue;
+							border: 5px solid $white;
+							border-radius: 50%;
+						}
+
+						.icon {
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							width: 62px;
+							height: 62px;
+							
+							i {
+								margin: auto;
+								color: $light-blue;
+								font-size: $font-size-label;
+							}
+						}
+					}					
+				}
+			}
+
+			#services-img {
+				display: none;
+				text-align: center;
+
+				@include for-tablet-up {
+					display: block;
+				}
+
+				img {
+					width: 510px;
+					height: 319px;
+				}
+			}
+		}
+	}
+}
