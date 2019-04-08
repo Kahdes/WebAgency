@@ -1,133 +1,150 @@
-#navbar {
-	position: relative;
+.nav {
+	position: fixed;
+	width: 100%;
+	background-color: $white;
+	box-shadow: $nav-shadow;
 	z-index: 100;
 
 	@include for-small-screen-up {
 		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
 	}
 
-	#nav-container {
+	.nav-container {
 		display: flex;
-		flex-direction: column;
-		background-color: $white;		
-		transition: width $transition-time;
+		justify-content: space-between;
+		align-items: center;
+		height: 75px;
 
 		@include for-small-screen-up {
-			flex-direction: row;
-			justify-content: center;
+			justify-content: space-around;
 			height: $nav-height;
-			box-shadow: $nav-shadow;
 		}
 
-		& > * {
-			align-self: center;
-			text-align: center;			
+		.nav-banner {
+			.nav-home {
+				width: 68px;
+				text-align: center;
+
+				.site-logo {
+					&.mini {
+						display: inherit;
+						padding-left: 15px;
+					}
+
+					&.large {
+						display: none;
+					}
+
+					@include for-tablet-up {
+						&.mini {
+							display: none;
+						}
+
+						&.large {
+							display: inherit;
+						}
+					}
+				}
+			}
 		}
 
-		input {
-			display: none;
+		.nav-navbar {
+			display: flex;
+			align-items: center;
+			position: relative;
+			text-align: right;
+			height: 100%;
 
-			& ~ #nav-hamburger .fa-caret-up {
+			.nav-trigger-input {
 				display: none;
-			}
 
-			&:checked ~ #nav-hamburger {
-				background-color: $dark-gray !important;
+				&~.nav-trigger-label {
+					position: relative;
+					height: 100%;
+					padding: 0 36px;
+					font-size: 1.125em;
+					line-height: 75px;
+					color: white;
+					background-image: linear-gradient(to right, $light-blue, $dark-blue);
 
-				.fa-caret-down {
-					display: none;
-				}
+					.open, .close {
+						position: relative;
+						top: 1px;
+						margin-left: 10px;
+						font-size: 1.25em;
+					}
 
-				.fa-caret-up {
-					display: inherit;
-				}
-			}
+					.open {
+						display: inherit;
+					}
 
-			&:checked ~ #nav-links {
-				display: flex;	
-			}
-		}
-
-		#nav-banner {
-			padding: 16px 0;
-
-			img {
-				width: $nav-banner-width;
-				height: $nav-banner-height;
-			}
-
-			@include for-small-screen-up {
-				width: 50%;
-				padding: 0;
-			}
-		}
-
-		#nav-links {
-			display: none;
-			flex-direction: column;
-			justify-content: center;
-			position: absolute;
-			top: 100%;
-			width: 100%;
-			font-size: $font-size-nav;
-			background-color: $light-transparent-white;
-
-			@include for-tablet-up {
-				width: $container-tablet-up !important;
-			}
-
-			@include for-small-screen-up {
-				display: flex;
-				flex-direction: row;
-				position: relative;
-				top: 0;
-			}
-
-			a {
-				padding: 5px 0;
-				color: $black;
-				text-decoration: none;
-				transition: background-color $transition-time;
-
-				&:hover {
-					background-color: $white;
-				}			
-
-				@include for-small-screen-up {
-					padding: $nav-link-padding-small;
-					border-top: $nav-link-border;
-					transition: padding $transition-time;
-
-					&:hover {
-						border-color: $light-blue;
-						background-color: $special-gray;
+					.close {
+						display: none;
 					}
 				}
 
-				@include for-large-screen-up {
-					padding: $nav-link-padding-large;
+				&:checked~.nav-trigger-label {
+					.open {
+						display: none;
+					}
+					.close {
+						display: inherit;
+					}
 				}
-			}			
-		}		
 
-		#nav-hamburger {
-			width: 100%;
-			color: white;
-			font-size: 1.5em;
-			background-color: $light-gray !important;			
-			transition: background-color $transition-time;
-			cursor: pointer;
-
-			&:hover {
-				background-color: $dark-gray !important;
+				&:checked~.nav-links {
+					display: flex;
+				}
 			}
 
-			@include for-small-screen-up {
+			.nav-trigger-label {
+				@include for-small-screen-up {
+					display: none;
+				}
+			}
+
+			.nav-links {
 				display: none;
+				position: absolute;
+				top: 75px;
+				right: 0;
+				flex-direction: column;
+				border: 2px solid $dark-blue;
+				border-top: none;
+				text-align: center;
+				background: white;
+
+				@include for-small-screen-up {
+					display: flex;
+					position: relative;
+					top: 0;
+					flex-direction: row;
+					border: none;
+				}
+
+				.link {
+					display: inline-block;
+					padding: 10px 40px;
+					color: $black;
+					text-decoration: none;
+					transition: background-color $transition-time;
+
+					&:hover {
+						background-color: $light-gray;
+					}
+
+					@include for-small-screen-up {
+						padding: 37px 25px 38px;
+						font-size: 1.125em;
+						border-top: $nav-link-border;
+
+						&:hover {
+							border-color: $light-blue;
+							background-color: $special-gray;
+						}
+					}
+				}
 			}
-		}		
-	}	
+		}
+	}
 }

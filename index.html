@@ -4,13 +4,13 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="description" content="Vous avez un projet Web ? La WebAgency vous aide à le réaliser !">
+	<meta name="description" content="Vous avez un projet Web ? La WebAgency vous aide à le réaliser !" />
 	<title>WebAgency : L'agence de tous vos projets !</title>
 
 	<link rel="shortcut icon" type="image/png" href="public/images/ico/icon.png" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700,900" />
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
 	<link rel="stylesheet" type="text/css" href="public/css/app.css" />
 
 	<!--[if lt IE 9]>
@@ -20,28 +20,30 @@
 </head>
 
 <body>
-	<div id="navbar">
-		<div class="container" id="nav-container">
-			<input type="checkbox" name="hamburger" id="hamburger" />
-			<div id="nav-banner">
-				<a href="#" title="WebAgency">
-					<img src="Public/images/logo/logo.png" alt="WebAgency" />
+	<header class="nav">
+		<div class="container nav-container">
+			<div class="nav-banner">
+				<a href="#" title="WebAgency" class="nav-home">
+					<img src="Public/images/logo/logo.png" class="site-logo large" />
+					<img src="Public/images/logo/mini_logo.png" class="site-logo mini" />
 				</a>
 			</div>
-			<label id="nav-hamburger" for="hamburger">
-				<span>
-					<i class="fas fa-caret-down"></i>
-					<i class="fas fa-caret-up"></i>
-				</span>
-			</label>
-			<nav id="nav-links" role="navigation">
-				<a href="#to-home" title="Accueil">Accueil</a>
-				<a href="#to-services" title="Services">Services</a>
-				<a href="#to-portfolio" title="Portfolio">Portfolio</a>
-				<a href="#to-contact" title="Contact">Contact</a>
-			</nav>
+
+			<div class="nav-navbar">
+				<input type="checkbox" name="nav-trigger-input" class="nav-trigger-input" id="nav-trigger-input" />
+				<label for="nav-trigger-input" class="nav-trigger-label">
+					<span>Menu <i class="fas fa-caret-down open"></i><i class="fas fa-caret-up close"></i></span>
+				</label>
+
+				<nav class="nav-links" role="navigation">
+					<a href="#to-home" title="Accueil" class="link">Accueil</a>
+					<a href="#to-services" title="Services" class="link">Services</a>
+					<a href="#to-portfolio" title="Portfolio" class="link">Portfolio</a>
+					<a href="#to-contact" title="Contact" class="link">Contact</a>
+				</nav>
+			</div>
 		</div>
-	</div>
+	</header>
 
 	<main class="container">
 		<header id="home">

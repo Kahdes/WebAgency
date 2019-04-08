@@ -12,6 +12,7 @@ body {
 main {
 	position: relative;
 	top: 0;
+	padding-top: 75px;
 	transition: width $transition-time;
 
 	@include for-small-screen-up {
@@ -47,7 +48,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .anchor {
 	position: relative;
-	top: 0;
+	top: -75px;
 
 	@include for-small-screen-up {
 		top: -$nav-height;
