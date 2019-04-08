@@ -17,30 +17,6 @@
 //  11. Contact
 
 
-// 1. Colors
-// ==========================================================================
-
-$transparent-white: rgba(255,255,255,.25);
-$light-transparent-white: rgba(255,255,255,.5);
-$dark-transparent-white: rgba(255,255,255,.75);
-$white: white;
-
-$special-gray: rgb(242, 242, 242);
-$light-gray: #CCCCCC;
-$dark-gray: #999999;
-
-$transparent-black: rgba(0,0,0,.25);
-$light-transparent-black: rgba(0,0,0,.5);
-$dark-transparent-black: rgba(0,0,0,.75);
-$black: black;
-
-$special-blue: rgba(117,178,225,1);
-$light-blue: rgba(70,140,195,1);
-$dark-blue: rgba(76,116,146,1);
-$blue: rgba(23,82,127,1);
-
-$special: #FFEFF0;
-
 // 2. Sizes / Margin & Padding
 // ==========================================================================
 
@@ -60,19 +36,8 @@ $phone: 767px;
 
 $section-container-padding: 75px 0;
 
-// 3. Transition & Animations
-// ==========================================================================
-
-$transition-time: .5s;
-
 // 4. Fonts
 // ==========================================================================
-
-$font-family: "Roboto", "Arial", sans-serif;
-
-$font-bold: 900;
-$font-normal: 700;
-$font-light: 400;
 
 $font-size-contact: 1em;
 $font-size-nav: 1.125em;
@@ -90,24 +55,16 @@ $button-border-radius: 5px;
 // 6. Titles
 // ==========================================================================
 
-$titles-line: 1px solid $light-gray;
+$titles-line: 1px solid var(--grey-2);
 $titles-line-width: 150px;
 $titles-line-margin: 20px 0;
 $titles-circle-x: 62.5px;
 $titles-circle-y: -12.5px;
 $titles-circle-dimensions: 25px;
-$titles-circle-border: 5px solid $white;
+$titles-circle-border: 5px solid white;
 
 // 7. Nav
 // ==========================================================================
-
-$nav-height: 100px;
-$nav-shadow: 0 3px 5px rgba(0,0,0,.3);
-$nav-banner-width: 261px;
-$nav-banner-height: 57px;
-$nav-link-padding-large: 37px 25px 38px;
-$nav-link-padding-small: 37px 15px 38px;
-$nav-link-border: 3px solid transparent;
 
 // 8. Home
 // ==========================================================================

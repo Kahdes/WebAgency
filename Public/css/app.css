@@ -52,7 +52,6 @@ a {
 
 abbr[title] {
   border-bottom: none;
-  text-decoration: underline;
   -webkit-text-decoration: underline dotted;
           text-decoration: underline dotted;
 }
@@ -235,6 +234,24 @@ template {
   display: none;
 }
 
+:root {
+  --grey-1: #f2f2f2;
+  --grey-2: #cccccc;
+  --grey-3: #999999;
+  --blue-1: #75b2e1;
+  --blue-2: #468cc3;
+  --blue-3: #4c7492;
+  --blue-4: #343148;
+  --yellow: #ffd662;
+  --beige: #ffeff0;
+  --red: #9e1030;
+  --font-family: "Roboto", "Arial", sans-serif;
+  --font-light: 400;
+  --font-normal: 700;
+  --font-bold: 900;
+  --transition-time: .5s;
+}
+
 *,
 ::after,
 ::before {
@@ -251,8 +268,8 @@ html {
 body {
   min-width: 320px;
   margin: 0;
-  font-family: "Roboto", "Arial", sans-serif;
-  background-color: lightgray;
+  font-family: var(--font-family);
+  background-color: var(--grey-2);
 }
 
 main {
@@ -335,46 +352,46 @@ textarea {
   width: 100%;
   padding: 10px;
   font-size: 1em;
-  font-family: "Roboto", "Arial", sans-serif;
-  font-weight: 900;
-  border: 1px solid #999999;
+  font-family: var(--font-family);
+  font-weight: var(--font-bold);
+  border: 1px solid var(--grey-3);
   border-radius: 5px;
-  -webkit-transition: background-color 0.5s;
-  transition: background-color 0.5s;
+  -webkit-transition: background-color var(--transition-time);
+  transition: background-color var(--transition-time);
 }
 
 input:focus,
 textarea:focus {
-  background-color: #f2f2f2;
-  outline: 2px solid #468cc3;
+  background-color: var(--grey-1);
+  outline: 2px solid var(--blue-2);
 }
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-  color: #999999;
+  color: var(--grey-3);
   font-size: 1em;
-  font-weight: 900;
+  font-weight: var(--font-bold);
 }
 
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-  color: #999999;
+  color: var(--grey-3);
   font-size: 1em;
-  font-weight: 900;
+  font-weight: var(--font-bold);
 }
 
 input::-ms-input-placeholder,
 textarea::-ms-input-placeholder {
-  color: #999999;
+  color: var(--grey-3);
   font-size: 1em;
-  font-weight: 900;
+  font-weight: var(--font-bold);
 }
 
 input::placeholder,
 textarea::placeholder {
-  color: #999999;
+  color: var(--grey-3);
   font-size: 1em;
-  font-weight: 900;
+  font-weight: var(--font-bold);
 }
 
 textarea {
@@ -387,14 +404,14 @@ textarea {
   font-size: 1.25em;
   border: none;
   border-radius: 5px;
-  background-color: #468cc3;
-  -webkit-transition: background-color 0.5s;
-  transition: background-color 0.5s;
+  background-color: var(--blue-2);
+  -webkit-transition: background-color var(--transition-time);
+  transition: background-color var(--transition-time);
   cursor: pointer;
 }
 
 #home #slider #slide #slide-text button:hover, #contact #contact-info #contact-form button:hover {
-  background-color: #17527f;
+  background-color: var(--blue-4);
 }
 
 .section-header {
@@ -421,7 +438,7 @@ textarea {
 .section-header .separator .line {
   position: relative;
   min-width: 150px;
-  border-top: 1px solid #CCCCCC;
+  border-top: 1px solid var(--grey-2);
 }
 
 .section-header .separator .circle {
@@ -434,7 +451,7 @@ textarea {
   color: white;
   text-align: center;
   opacity: 1;
-  background: #468cc3;
+  background: var(--blue-2);
   border: 5px solid white;
   border-radius: 50%;
 }
@@ -556,8 +573,8 @@ textarea {
   font-size: 1.125em;
   line-height: 75px;
   color: white;
-  background-image: -webkit-gradient(linear, left top, right top, from(#468cc3), to(#4c7492));
-  background-image: linear-gradient(to right, #468cc3, #4c7492);
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--blue-2)), to(var(--blue-3)));
+  background-image: linear-gradient(to right, var(--blue-2), var(--blue-3));
 }
 
 .nav .nav-container .nav-navbar .nav-trigger-input ~ .nav-trigger-label .open,
@@ -605,7 +622,7 @@ textarea {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border: 2px solid #4c7492;
+  border: 2px solid var(--blue-3);
   border-top: none;
   text-align: center;
   background: white;
@@ -631,12 +648,12 @@ textarea {
   padding: 10px 40px;
   color: black;
   text-decoration: none;
-  -webkit-transition: background-color 0.5s;
-  transition: background-color 0.5s;
+  -webkit-transition: background-color var(--transition-time);
+  transition: background-color var(--transition-time);
 }
 
 .nav .nav-container .nav-navbar .nav-links .link:hover {
-  background-color: #CCCCCC;
+  background-color: var(--grey-2);
 }
 
 @media all and (min-width: 1200px) {
@@ -646,8 +663,8 @@ textarea {
     border-top: 3px solid transparent;
   }
   .nav .nav-container .nav-navbar .nav-links .link:hover {
-    border-color: #468cc3;
-    background-color: #f2f2f2;
+    border-color: var(--blue-2);
+    background-color: var(--grey-1);
   }
 }
 
@@ -702,8 +719,8 @@ textarea {
     width: 10%;
     padding: 0;
     background-color: transparent;
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
+    -webkit-transition: all var(--transition-time);
+    transition: all var(--transition-time);
   }
   #home #slider label[for=slider-prev]:hover, #home #slider label[for=slider-next]:hover {
     background-color: rgba(0, 0, 0, 0.25);
@@ -726,8 +743,8 @@ textarea {
   min-height: 550px !important;
   background-repeat: no-repeat;
   background-position: 80%;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+  -webkit-transition: all var(--transition-time);
+  transition: all var(--transition-time);
 }
 
 @media all and (min-width: 769px) {
@@ -760,7 +777,7 @@ textarea {
   padding-top: 62px;
   color: white;
   text-align: center;
-  font-weight: 900;
+  font-weight: var(--font-bold);
   background-color: rgba(0, 0, 0, 0.25);
 }
 
@@ -785,7 +802,7 @@ textarea {
 }
 
 #home #slider #slide #slide-text h1 span {
-  color: #75b2e1;
+  color: var(--blue-1);
 }
 
 #home #slider #slide #slide-text button {
@@ -804,9 +821,9 @@ textarea {
   bottom: 0;
   left: 0;
   height: 5px !important;
-  background-color: #468cc3;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+  background-color: var(--blue-2);
+  -webkit-transition: all var(--transition-time);
+  transition: all var(--transition-time);
 }
 
 #services {
@@ -908,7 +925,7 @@ textarea {
 #services #services-container #services-content #services-articles [id^=article-] .service-icon {
   position: relative;
   left: -25px;
-  border: 1px solid #999999;
+  border: 1px solid var(--grey-3);
   border-radius: 50%;
 }
 
@@ -922,7 +939,7 @@ textarea {
   color: white;
   text-align: center;
   opacity: 1;
-  background: #468cc3;
+  background: var(--blue-2);
   border: 5px solid white;
   border-radius: 50%;
 }
@@ -943,7 +960,7 @@ textarea {
 
 #services #services-container #services-content #services-articles [id^=article-] .service-icon .icon i {
   margin: auto;
-  color: #468cc3;
+  color: var(--blue-2);
   font-size: 2em;
 }
 
@@ -964,7 +981,7 @@ textarea {
 }
 
 #portfolio {
-  background-color: #FFEFF0;
+  background-color: var(--beige);
 }
 
 #portfolio #portfolio-container input {
@@ -973,7 +990,7 @@ textarea {
 
 #portfolio #portfolio-container #selector-works:checked ~ #portfolio-selectors #selectors .selector[for=selector-works] {
   color: white;
-  background-color: #468cc3 !important;
+  background-color: var(--blue-2) !important;
 }
 
 #portfolio #portfolio-container #selector-works:checked ~ #portfolio-selectors #selectors .selector[for=selector-works] i {
@@ -986,7 +1003,7 @@ textarea {
 
 #portfolio #portfolio-container #selector-creative:checked ~ #portfolio-selectors #selectors .selector[for=selector-creative] {
   color: white;
-  background-color: #468cc3 !important;
+  background-color: var(--blue-2) !important;
 }
 
 #portfolio #portfolio-container #selector-creative:checked ~ #portfolio-selectors #selectors .selector[for=selector-creative] i {
@@ -1001,7 +1018,7 @@ textarea {
 
 #portfolio #portfolio-container #selector-corporate:checked ~ #portfolio-selectors #selectors .selector[for=selector-corporate] {
   color: white;
-  background-color: #468cc3 !important;
+  background-color: var(--blue-2) !important;
 }
 
 #portfolio #portfolio-container #selector-corporate:checked ~ #portfolio-selectors #selectors .selector[for=selector-corporate] i {
@@ -1016,7 +1033,7 @@ textarea {
 
 #portfolio #portfolio-container #selector-portfolio:checked ~ #portfolio-selectors #selectors .selector[for=selector-portfolio] {
   color: white;
-  background-color: #468cc3 !important;
+  background-color: var(--blue-2) !important;
 }
 
 #portfolio #portfolio-container #selector-portfolio:checked ~ #portfolio-selectors #selectors .selector[for=selector-portfolio] i {
@@ -1047,10 +1064,10 @@ textarea {
   padding: 10px 5px;
   color: black;
   text-align: center;
-  font-weight: 400;
-  background-color: #CCCCCC;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+  font-weight: var(--font-light);
+  background-color: var(--grey-2);
+  -webkit-transition: all var(--transition-time);
+  transition: all var(--transition-time);
   cursor: pointer;
 }
 
@@ -1069,23 +1086,23 @@ textarea {
 }
 
 #portfolio #portfolio-container #portfolio-selectors #selectors label:hover {
-  background-color: #468cc3;
+  background-color: var(--blue-2);
 }
 
 #portfolio #portfolio-container #portfolio-selectors #selectors label i {
   position: absolute;
   bottom: -19px;
   left: 38%;
-  color: #17527f;
+  color: var(--blue-4);
   font-size: 2em;
   opacity: 0;
-  -webkit-transition: opacity 0.5s;
-  transition: opacity 0.5s;
+  -webkit-transition: opacity var(--transition-time);
+  transition: opacity var(--transition-time);
 }
 
 #portfolio #portfolio-container #portfolio-selectors #selectors label:hover {
   color: white;
-  background-color: #468cc3;
+  background-color: var(--blue-2);
 }
 
 #portfolio #portfolio-container #portfolio-selectors #selectors label:hover i {
@@ -1168,8 +1185,8 @@ textarea {
   color: white;
   opacity: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+  -webkit-transition: all var(--transition-time);
+  transition: all var(--transition-time);
 }
 
 #portfolio #portfolio-container #portfolio-content #portfolio-articles .project > div span {
@@ -1182,7 +1199,7 @@ textarea {
   border: 2px solid white;
   border-radius: 50%;
   opacity: 0;
-  background: #468cc3;
+  background: var(--blue-2);
 }
 
 #portfolio #portfolio-container #portfolio-content #portfolio-articles .project > div span i {
@@ -1273,7 +1290,7 @@ textarea {
 
 #contact #contact-info #contact-form address {
   color: rgba(0, 0, 0, 0.75);
-  font-weight: 700;
+  font-weight: var(--font-normal);
   font-style: normal;
 }
 

@@ -1,5 +1,5 @@
 #services {
-	background-color: $white;
+	background-color: white;
 
 	#services-container {
 
@@ -65,7 +65,7 @@
 					.service-icon {
 						position: relative;						
 						left: -25px;						
-						border: 1px solid $dark-gray;
+						border: 1px solid var(--grey-3);
 						border-radius: 50%;
 
 						.circle {
@@ -78,8 +78,8 @@
 							color: white;
 							text-align: center;
 							opacity: 1;
-							background: $light-blue;
-							border: 5px solid $white;
+							background: var(--blue-2);
+							border: 5px solid white;
 							border-radius: 50%;
 						}
 
@@ -92,7 +92,7 @@
 							
 							i {
 								margin: auto;
-								color: $light-blue;
+								color: var(--blue-2);
 								font-size: $font-size-label;
 							}
 						}

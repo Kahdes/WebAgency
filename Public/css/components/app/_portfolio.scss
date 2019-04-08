@@ -1,5 +1,5 @@
 #portfolio {
-	background-color: $special;
+	background-color: var(--beige);
 
 	#portfolio-container {
 
@@ -12,8 +12,8 @@
 				& ~ #portfolio-selectors   {
 					#selectors {
 						.selector[for=selector-#{$input}] {
-							color: $white;
-							background-color: $light-blue !important;
+							color: white;
+							background-color: var(--blue-2) !important;
 
 							i {
 								opacity: 1;
@@ -28,19 +28,19 @@
 							.project {
 								display: block;
 							}
-						} @elseif $input == "creative" {
+						} @else if $input == "creative" {
 							.project#project-1,
 							.project#project-2,
 							.project#project-3 {
 								display: block;
 							}
-						} @elseif $input == "corporate" {
+						} @else if $input == "corporate" {
 							.project#project-4,
 							.project#project-5,
 							.project#project-6{
 								display: block;
 							}
-						} @elseif $input == "portfolio" {
+						} @else if $input == "portfolio" {
 							.project#project-7,
 							.project#project-8 {
 								display: block;
@@ -62,11 +62,11 @@
 				label {
 					position: relative;
 					padding: 10px 5px;
-					color: $black;
+					color: black;
 					text-align: center;
-					font-weight: $font-light;					
-					background-color: $light-gray;
-					transition: all $transition-time;
+					font-weight: var(--font-light);					
+					background-color: var(--grey-2);
+					transition: all var(--transition-time);
 					cursor: pointer;
 
 					@include for-tablet-up {
@@ -82,23 +82,23 @@
 					}
 
 					&:hover {
-						background-color: $light-blue;
+						background-color: var(--blue-2);
 					}
 
 					i {
 						position: absolute;
 						bottom: -19px;
 						left: 38%;						
-						color: $blue;
+						color: var(--blue-4);
 						font-size: $font-size-label;
 						opacity: 0;
-						transition: opacity $transition-time;
+						transition: opacity var(--transition-time);
 					}
 				}
 
 				label:hover {
-					color: $white;
-					background-color: $light-blue;
+					color: white;
+					background-color: var(--blue-2);
 
 					i {
 						opacity: 1;
@@ -153,10 +153,10 @@
 						height: 0;
 						bottom: 0;
 						padding: 0 10px;
-						color: $white;
+						color: white;
 						opacity: 0;
-						background-color: $light-transparent-black;
-						transition: all $transition-time;
+						background-color: rgba(0,0,0,.5);
+						transition: all var(--transition-time);
 
 
 						span {						
@@ -166,10 +166,10 @@
 							height: 39px; 
 							top: -19px;
 							right: 7.5%;
-							border: 2px solid $white;
+							border: 2px solid white;
 							border-radius: 50%;
 							opacity: 0;
-							background: $light-blue;						
+							background: var(--blue-2);						
 
 							i {
 								padding-top: 9.5px;

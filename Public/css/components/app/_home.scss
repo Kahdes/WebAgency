@@ -32,9 +32,9 @@
 			bottom: 0;
 			width: 50%;
 			padding: 15px 0;
-			color: $white;
+			color: white;
 			font-size: $font-size-label;			
-			background-color: $dark-transparent-black;
+			background-color: rgba(0,0,0,.75);
 			cursor: pointer;
 
 			&[for=slider-prev],
@@ -44,10 +44,10 @@
 					width: 10%;
 					padding: 0;
 					background-color: transparent;
-					transition: all $transition-time;
+					transition: all var(--transition-time);
 
 					&:hover {
-						background-color: $transparent-black;
+						background-color: rgba(0,0,0,.25);
 					}
 				}
 			}
@@ -66,7 +66,7 @@
 			min-height: $home-min-height !important;
 			background-repeat: no-repeat;
 			background-position: 80%;
-			transition: all $transition-time;
+			transition: all var(--transition-time);
 
 			@include for-tablet-up {
 				background-position: 90%;
@@ -86,8 +86,8 @@
 				padding-top: 62px;
 				color: white;
 				text-align: center;
-				font-weight: $font-bold;
-				background-color: $transparent-black;
+				font-weight: var(--font-bold);
+				background-color: rgba(0,0,0,.25);
 
 				@include for-small-screen-up {
 					justify-content: center;
@@ -105,7 +105,7 @@
 					text-transform: uppercase;
 
 					span {
-						color: $special-blue;
+						color: var(--blue-1);
 					}
 				}
 
@@ -126,8 +126,8 @@
 			bottom: 0;
 			left: 0;
 			height: 5px !important;
-			background-color: $light-blue;
-			transition: all $transition-time;
+			background-color: var(--blue-2);
+			transition: all var(--transition-time);
 		}
 	}
 }

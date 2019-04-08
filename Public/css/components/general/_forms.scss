@@ -3,21 +3,21 @@ textarea {
 	width: 100%;
 	padding: $forms-padding;
 	font-size: $font-size-contact;
-	font-family: $font-family;
-	font-weight: $font-bold;
-	border: 1px solid $dark-gray;
+	font-family: var(--font-family);
+	font-weight: var(--font-bold);
+	border: 1px solid var(--grey-3);
 	border-radius: $button-border-radius;
-	transition: background-color $transition-time;
+	transition: background-color var(--transition-time);
 
 	&:focus {
-		background-color: $special-gray;
-		outline: 2px solid $light-blue;
+		background-color: var(--grey-1);
+		outline: 2px solid var(--blue-2);
 	}
 
 	&::placeholder {
-		color: $dark-gray;
+		color: var(--grey-3);
 		font-size: $font-size-contact;
-		font-weight: $font-bold;
+		font-weight: var(--font-bold);
 	}
 }
 
@@ -27,15 +27,15 @@ textarea {
 
 %button {
 	padding: $button-padding;
-	color: $white;
+	color: white;
 	font-size: $font-size-button;
 	border: none;
 	border-radius: $button-border-radius;
-	background-color: $light-blue;
-	transition: background-color $transition-time;					
+	background-color: var(--blue-2);
+	transition: background-color var(--transition-time);					
 	cursor: pointer;
 
 	&:hover {
-		background-color: $blue;
+		background-color: var(--blue-4);
 	}
 }

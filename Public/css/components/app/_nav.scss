@@ -1,8 +1,8 @@
 .nav {
 	position: fixed;
 	width: 100%;
-	background-color: $white;
-	box-shadow: $nav-shadow;
+	background-color: white;
+	box-shadow: 0 3px 5px rgba(0,0,0,.3);
 	z-index: 100;
 
 	@include for-small-screen-up {
@@ -17,7 +17,7 @@
 
 		@include for-small-screen-up {
 			justify-content: space-around;
-			height: $nav-height;
+			height: 100px;
 		}
 
 		.nav-banner {
@@ -72,7 +72,7 @@
 					font-size: 1.125em;
 					line-height: 75px;
 					color: white;
-					background-image: linear-gradient(to right, $light-blue, $dark-blue);
+					background-image: linear-gradient(to right, var(--blue-2), var(--blue-3));
 
 					.open,
 					.close {
@@ -118,7 +118,7 @@
 				top: 75px;
 				right: 0;
 				flex-direction: column;
-				border: 2px solid $dark-blue;
+				border: 2px solid var(--blue-3);
 				border-top: none;
 				text-align: center;
 				background: white;
@@ -134,22 +134,22 @@
 				.link {
 					display: inline-block;
 					padding: 10px 40px;
-					color: $black;
+					color: black;
 					text-decoration: none;
-					transition: background-color $transition-time;
+					transition: background-color var(--transition-time);
 
 					&:hover {
-						background-color: $light-gray;
+						background-color: var(--grey-2);
 					}
 
 					@include for-small-screen-up {
 						padding: 39px 25px 38px;
 						font-size: 1.125em;
-						border-top: $nav-link-border;
+						border-top: 3px solid transparent;
 
 						&:hover {
-							border-color: $light-blue;
-							background-color: $special-gray;
+							border-color: var(--blue-2);
+							background-color: var(--grey-1);
 						}
 					}
 				}
