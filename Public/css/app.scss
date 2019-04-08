@@ -1,17 +1,17 @@
 @charset "UTF-8";
 
-@import "components/general/variables";
+@import "components/norms/variables";
+@import "components/norms/mixins";
+@import "components/norms/normalize";
+@import "components/norms/general";
 
-@import "components/general/mixins";
-@import "components/general/general";
 
+@import "components/general/keyframes";
 @import "components/general/forms";
 @import "components/general/titles";
 
-@import "components/nav";
-@import "components/home";
-@import "components/services";
-@import "components/portfolio";
-@import "components/contact";
-
-@import "components/general/keyframes";
+@import "components/app/nav";
+@import "components/app/home";
+@import "components/app/services";
+@import "components/app/portfolio";
+@import "components/app/contact";

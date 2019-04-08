@@ -1,44 +1,53 @@
-* {
+*,
+::after,
+::before {
 	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+html {
+	scroll-behavior: smooth;
 }
 
 body {
 	min-width: $body-min-width;
 	margin: 0;
 	font-family: $font-family;
-	background-color: lightgray;	
+	background-color: lightgray;
 }
 
 main {
 	position: relative;
 	top: 0;
 	padding-top: 75px;
-	transition: width $transition-time;
 
 	@include for-small-screen-up {
 		padding-top: $nav-height;
-	}	
+	}
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
 	margin: 0;
 }
 
 .container {
-	margin: auto;
 	width: 100%;
-	max-width: $container-max-width;
-
-	@include for-tablet-up {
-		width: $container-tablet-up !important;
-	}
+	min-width: 304px;
 
 	@include for-small-screen-up {
-		width: $container-small-screen-up !important;
+		width: $container-small-screen-up;
+		margin: auto;
 	}
 
 	@include for-large-screen-up {
-		width: $container-large-screen-up !important;
+		width: $container-large-screen-up;
 	}
 }
 

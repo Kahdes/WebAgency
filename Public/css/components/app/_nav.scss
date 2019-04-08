@@ -33,6 +33,13 @@
 
 					&.large {
 						display: none;
+
+						@include for-tablet-up {
+							padding-left: 15px;
+						}
+						@include for-small-screen-up {
+							padding-left: 0;
+						}
 					}
 
 					@include for-tablet-up {
@@ -67,7 +74,8 @@
 					color: white;
 					background-image: linear-gradient(to right, $light-blue, $dark-blue);
 
-					.open, .close {
+					.open,
+					.close {
 						position: relative;
 						top: 1px;
 						margin-left: 10px;
@@ -87,6 +95,7 @@
 					.open {
 						display: none;
 					}
+
 					.close {
 						display: inherit;
 					}
@@ -134,7 +143,7 @@
 					}
 
 					@include for-small-screen-up {
-						padding: 37px 25px 38px;
+						padding: 39px 25px 38px;
 						font-size: 1.125em;
 						border-top: $nav-link-border;
 
