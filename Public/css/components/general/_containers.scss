@@ -1,5 +1,5 @@
 .main-container {
-    --main-width: 1150px;
+	--main-width: 1150px;
 
 	width: 100%;
 	min-width: 304px;
@@ -16,12 +16,12 @@
 
 .section-container {
 	--section-padding: 50px 0;
-	
-    padding: var(--section-padding);
-    
-    @include for-small-screen-up {
-        --section-padding: 75px 0;
-    }
+
+	padding: var(--section-padding);
+
+	@include for-small-screen-up {
+		--section-padding: 75px 0;
+	}
 }
 
 .anchor {

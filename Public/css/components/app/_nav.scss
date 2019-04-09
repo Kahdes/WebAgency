@@ -1,10 +1,10 @@
 .nav {
-	--logo-padding: 15px;
+	--logo-margin: 15px;
 
 	position: fixed;
 	width: 100%;
 	background-color: white;
-	box-shadow: 0 3px 5px rgba(0,0,0,.3);
+	box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
 	z-index: 100;
 
 	@include for-small-screen-up {
@@ -29,17 +29,18 @@
 				.site-logo {
 					&.mini {
 						display: inherit;
-						padding-left: var(--logo-padding);
+						margin-left: var(--logo-margin);
 					}
 
 					&.large {
 						display: none;
 
 						@include for-tablet-up {
-							padding-left: var(--logo-padding);
+							margin-left: var(--logo-margin);
 						}
+
 						@include for-small-screen-up {
-							padding-left: 0;
+							margin-left: 0;
 						}
 					}
 
@@ -61,7 +62,7 @@
 			align-items: center;
 			position: relative;
 			height: 100%;
-			text-align: right;			
+			text-align: right;
 
 			.nav-trigger-input {
 				display: none;
@@ -132,6 +133,7 @@
 					margin-right: 15px;
 					border: none;
 				}
+
 				@include for-small-screen-up {
 					margin-right: 0;
 				}

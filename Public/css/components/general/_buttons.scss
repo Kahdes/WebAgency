@@ -1,6 +1,6 @@
 .button {
-    --btn-padding: 10px;
-    --btn-radius: 5px;
+	--btn-padding: 10px;
+	--btn-radius: 5px;
 
 	padding: var(--btn-padding);
 	color: white;
@@ -8,7 +8,7 @@
 	border: none;
 	border-radius: var(--btn-radius);
 	background-color: var(--blue-2);
-	transition: background-color var(--transition-time);					
+	transition: background-color var(--transition-time);
 	cursor: pointer;
 
 	&:hover {

@@ -1,55 +1,58 @@
 .section-header {
-	margin-bottom: 0;
-	padding: 0;
+	--title-size: 2.5rem;
 	text-align: center;
-	
+
 	.title {
-		font-size: $font-size-xl;
+		font-size: var(--title-size);
 		text-transform: uppercase;
+
+		@include for-tablet-up {
+			--title-size: 3rem;
+		}
 	}
 
 	.separator {
+		--separator-margin: 20px 0;
+		--line-width: 150px;
+		--line-border: 1px solid var(--grey-2);
+		--circle-top: -12.5px;
+		--circle-left: 62.5px;
+		--circle-ratio: 25px;
+		--circle-border: 5px solid white;
+
 		display: flex;
 		justify-content: center;
-		margin: $titles-line-margin;
+		margin: var(--separator-margin);
 
-		.line {
+		.separator-line {
 			position: relative;
-			min-width: $titles-line-width;
-			border-top: $titles-line;
+			min-width: var(--line-width);
+			border-top: var(--line-border);
 		}
 
-		.circle {
+		.separator-circle {
 			position: absolute;
-			top: $titles-circle-y;
-			left: $titles-circle-x;
-			width: $titles-circle-dimensions;
-			height: $titles-circle-dimensions;
+			top: var(--circle-top);
+			left: var(--circle-left);
+			width: var(--circle-ratio);
+			height: var(--circle-ratio);
 			margin: 0;
 			color: white;
 			text-align: center;
 			opacity: 1;
 			background: var(--blue-2);
-			border: $titles-circle-border;
+			border: var(--circle-border);
 			border-radius: 50%;
 		}
 	}
 
 	.description {
 		margin: auto;
-		padding: 0 50px;
+		padding: 0 20px;
 
 		@include for-tablet-up {
-			padding: 0 15%;
-		}
-
-		@include for-small-screen-up {
-			padding: 0 20%;
-		}
-
-		@include for-large-screen-up {
-			padding: 0 25%;
+			width: 650px;
+			padding: 0;
 		}
 	}
 }
-
