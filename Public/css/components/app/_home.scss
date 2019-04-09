@@ -1,6 +1,7 @@
 .home {
 	--min-height-1: 550px;
 	--min-height-2: 400px;
+	--progress-bar-height: 5px;
 	--img-1: url("../images/slider/bg1.jpg");
 	--img-2: url("../images/slider/bg2.jpg");
 
@@ -112,12 +113,7 @@
 				}
 
 				.slide-title {
-					font-size: 2rem;
 					text-transform: uppercase;
-
-					@include for-tablet-up {
-						font-size: 2.5rem;
-					}
 
 					.slide-keyword {
 						color: var(--blue-2);
@@ -136,7 +132,7 @@
 			width: 0%;
 			bottom: 0;
 			left: 0;
-			height: 5px;
+			height: var(--progress-bar-height);
 			background-color: var(--blue-2);
 			transition: width var(--transition-time);
 

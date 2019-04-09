@@ -1,5 +1,4 @@
 .nav {
-	--width-logo-mini: 68px;
 	--logo-padding: 15px;
 
 	position: fixed;
@@ -25,7 +24,6 @@
 
 		.nav-banner {
 			.nav-home {
-				width: var(--width-logo-mini);
 				text-align: center;
 
 				.site-logo {

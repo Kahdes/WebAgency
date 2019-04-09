@@ -42,7 +42,9 @@ html {
 }
 
 body {
-	min-width: $body-min-width;
+	--body-min-width: 310px;
+	
+	min-width: var(--body-min-width);
 	margin: 0;
 	font-family: var(--font-family);
 	background-color: var(--grey-2);
@@ -66,31 +68,4 @@ h5,
 h6,
 p {
 	margin: 0;
-}
-
-.container {
-	width: 100%;
-	min-width: 304px;
-
-	@include for-small-screen-up {
-		width: $container-small-screen-up;
-		margin: auto;
-	}
-
-	@include for-large-screen-up {
-		width: $container-large-screen-up;
-	}
-}
-
-.section-container {
-	padding: $section-container-padding;
-}
-
-.anchor {
-	position: relative;
-	top: -75px;
-
-	@include for-small-screen-up {
-		top: -100px;
-	}
 }
