@@ -9,13 +9,13 @@
 			display: none;
 
 			&#slider-prev:checked ~ #slide {
-				background-image: $home-bg-1;
+				background-image: map-get($home-bgs, '1');
 			}
 
 			&#slider-next:checked {
 
 				& ~ #slide {
-					background-image: $home-bg-2;
+					background-image: map-get($home-bgs, '2');
 				}
 
 				& ~ #progress {

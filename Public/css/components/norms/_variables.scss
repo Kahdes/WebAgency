@@ -40,7 +40,6 @@ $section-container-padding: 75px 0;
 // ==========================================================================
 
 $font-size-contact: 1em;
-$font-size-nav: 1.125em;
 $font-size-button: 1.25em;
 $font-size-label: 2em;
 $font-size-xl: 3em;
@@ -70,8 +69,10 @@ $titles-circle-border: 5px solid white;
 // ==========================================================================
 
 $home-min-height: 550px;
-$home-bg-1: url("../images/slider/bg1.jpg");
-$home-bg-2: url("../images/slider/bg2.jpg");
+$home-bgs: (
+    '1': url("../images/slider/bg1.jpg"),
+    '2': url("../images/slider/bg2.jpg")
+);
 
 // 9. Services
 // ==========================================================================
