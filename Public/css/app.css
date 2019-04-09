@@ -378,10 +378,11 @@ p {
 
 .button {
   --btn-padding: 10px;
+  --btn-font-size: 1.25rem;
   --btn-radius: 5px;
   padding: var(--btn-padding);
   color: white;
-  font-size: 1.25em;
+  font-size: var(--btn-font-size);
   border: none;
   border-radius: var(--btn-radius);
   background-color: var(--blue-2);
@@ -394,55 +395,36 @@ p {
   background-color: var(--blue-4);
 }
 
-input,
-textarea {
+.form-input {
   width: 100%;
   padding: 10px;
-  font-size: 1em;
   font-family: var(--font-family);
-  font-weight: var(--font-bold);
   border: 1px solid var(--grey-3);
   border-radius: 5px;
   -webkit-transition: background-color var(--transition-time);
   transition: background-color var(--transition-time);
-}
-
-input:focus,
-textarea:focus {
-  background-color: var(--grey-1);
-  outline: 2px solid var(--blue-2);
-}
-
-input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
-  color: var(--grey-3);
-  font-size: 1em;
-  font-weight: var(--font-bold);
-}
-
-input:-ms-input-placeholder,
-textarea:-ms-input-placeholder {
-  color: var(--grey-3);
-  font-size: 1em;
-  font-weight: var(--font-bold);
-}
-
-input::-ms-input-placeholder,
-textarea::-ms-input-placeholder {
-  color: var(--grey-3);
-  font-size: 1em;
-  font-weight: var(--font-bold);
-}
-
-input::placeholder,
-textarea::placeholder {
-  color: var(--grey-3);
-  font-size: 1em;
-  font-weight: var(--font-bold);
-}
-
-textarea {
   resize: none;
+}
+
+.form-input:focus {
+  outline: 2px solid var(--blue-2);
+  background-color: var(--grey-1);
+}
+
+.form-input::-webkit-input-placeholder {
+  color: var(--grey-3);
+}
+
+.form-input:-ms-input-placeholder {
+  color: var(--grey-3);
+}
+
+.form-input::-ms-input-placeholder {
+  color: var(--grey-3);
+}
+
+.form-input::placeholder {
+  color: var(--grey-3);
 }
 
 .section-header {
@@ -1291,39 +1273,43 @@ textarea {
           animation: portfolio-eye 4s .125s ease-out infinite;
 }
 
-#contact {
+.contact {
+  --contact-bg: url("../images/contact/map.jpg");
   position: relative;
-  background: url("../images/contact/map.jpg") no-repeat center;
+  background-image: var(--contact-bg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-#contact #contact-info {
+.contact .contact-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.25);
 }
 
 @media all and (min-width: 769px) {
-  #contact #contact-info {
+  .contact .contact-container {
     padding: 50px 150px;
   }
 }
 
 @media all and (min-width: 1200px) {
-  #contact #contact-info {
+  .contact .contact-container {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
   }
 }
 
-#contact #contact-info #contact-form {
+.contact .contact-container .contact-info {
+  --margin-bottom: 10px;
   width: 100%;
   padding: 20px;
   text-align: center;
@@ -1331,42 +1317,46 @@ textarea {
 }
 
 @media all and (min-width: 1200px) {
-  #contact #contact-info #contact-form {
+  .contact .contact-container .contact-info {
     width: 50%;
     text-align: left;
   }
 }
 
 @media all and (min-width: 1200px) {
-  #contact #contact-info #contact-form {
+  .contact .contact-container .contact-info {
     width: 40%;
   }
 }
 
-#contact #contact-info #contact-form h3, #contact #contact-info #contact-form address,
-#contact #contact-info #contact-form form > *:not(button) {
-  margin-bottom: 10px;
+.contact .contact-container .contact-info .contact-address {
+  --address-font-size: 1.75rem;
 }
 
-#contact #contact-info #contact-form h3 {
+.contact .contact-container .contact-info .contact-address .address-title {
   margin-top: 0;
-  font-size: 1.75em;
+  font-size: var(--address-font-size);
 }
 
-#contact #contact-info #contact-form address {
+.contact .contact-container .contact-info .contact-address .address-infos {
   color: rgba(0, 0, 0, 0.75);
   font-weight: var(--font-normal);
   font-style: normal;
 }
 
-#contact #contact-info #contact-form button {
+.contact .contact-container .contact-info .address-title,
+.contact .contact-container .contact-info .address-infos,
+.contact .contact-container .contact-info .contact-form form > *:not(button) {
+  margin-bottom: var(--margin-bottom);
+}
+
+.contact .contact-container .contact-info .contact-form .form-submit {
   width: 100%;
 }
 
 @media all and (min-width: 1200px) {
-  #contact #contact-info #contact-form button {
+  .contact .contact-container .contact-info .contact-form .form-submit {
     width: inherit;
-    padding: 10px;
   }
 }
 /*# sourceMappingURL=app.css.map */

@@ -1,10 +1,11 @@
 .button {
 	--btn-padding: 10px;
+	--btn-font-size: 1.25rem;
 	--btn-radius: 5px;
 
 	padding: var(--btn-padding);
 	color: white;
-	font-size: $font-size-button;
+	font-size: var(--btn-font-size);
 	border: none;
 	border-radius: var(--btn-radius);
 	background-color: var(--blue-2);

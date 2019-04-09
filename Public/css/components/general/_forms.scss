@@ -1,26 +1,18 @@
-input,
-textarea {
+.form-input {
 	width: 100%;
-	padding: $forms-padding;
-	font-size: $font-size-contact;
+	padding: 10px;
 	font-family: var(--font-family);
-	font-weight: var(--font-bold);
 	border: 1px solid var(--grey-3);
 	border-radius: 5px;
 	transition: background-color var(--transition-time);
+	resize: none;
 
 	&:focus {
-		background-color: var(--grey-1);
 		outline: 2px solid var(--blue-2);
+		background-color: var(--grey-1);
 	}
 
 	&::placeholder {
 		color: var(--grey-3);
-		font-size: $font-size-contact;
-		font-weight: var(--font-bold);
 	}
-}
-
-textarea {
-	resize: none;
 }

@@ -1,13 +1,17 @@
-#contact {
-	position: relative;
-	background: $contact-bg no-repeat center;
+.contact {
+	--contact-bg: url("../images/contact/map.jpg");
 
-	#contact-info {
+	position: relative;
+	background-image: var(--contact-bg);
+	background-repeat: no-repeat;
+	background-position: center;
+
+	.contact-container {
 		display: flex;
-		height: 100%;
 		justify-content: center;
 		align-content: center;
-		background-color: rgba(0,0,0,.25);
+		height: 100%;
+		background-color: rgba(0, 0, 0, .25);
 
 		@include for-tablet-up {
 			padding: 50px 150px;
@@ -17,11 +21,13 @@
 			justify-content: flex-end;
 		}
 
-		#contact-form {
+		.contact-info {
+			--margin-bottom: 10px;
+
 			width: 100%;
 			padding: 20px;
 			text-align: center;
-			background-color: rgba(255,255,255,.75);
+			background-color: rgba(255, 255, 255, .75);
 
 			@include for-small-screen-up {
 				width: 50%;
@@ -32,30 +38,36 @@
 				width: 40%;
 			}
 
-			& h3, & address,
-			& form > *:not(button) {
-				margin-bottom: $contact-margin;
-			}
+			.contact-address {
+				--address-font-size: 1.75rem;
 
-			h3 {
-				margin-top: 0;
-				font-size: 1.75em;				
-			}
-
-			address {
-				color: rgba(0,0,0,.75);
-				font-weight: var(--font-normal);
-				font-style: normal;
-			}
-
-			button {
-				width: 100%;
-
-				@include for-small-screen-up {
-					width: inherit;
-					padding: 10px;
+				.address-title {
+					margin-top: 0;
+					font-size: var(--address-font-size);
 				}
-			}			
+
+				.address-infos {
+					color: rgba(0, 0, 0, .75);
+					font-weight: var(--font-normal);
+					font-style: normal;
+				}
+			}
+
+			.address-title,
+			.address-infos,
+			.contact-form form>*:not(button) {
+				margin-bottom: var(--margin-bottom);
+			}
+
+			.contact-form {
+				.form-submit {
+					width: 100%;
+
+					@include for-small-screen-up {
+						width: inherit;
+					}
+				}
+			}
 		}
 	}
 }
