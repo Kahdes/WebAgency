@@ -1,6 +1,4 @@
 .nav {
-	--height-mini: 75px;
-	--height-large: 100px;
 	--width-logo-mini: 68px;
 	--logo-padding: 15px;
 
@@ -18,11 +16,11 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		height: var(--height-mini);
+		height: var(--nav-height-mini);
 
 		@include for-small-screen-up {
 			justify-content: space-around;
-			height: var(--height-large);
+			height: var(--nav-height-large);
 		}
 
 		.nav-banner {
@@ -121,7 +119,7 @@
 				display: none;
 				flex-direction: column;
 				position: absolute;
-				top: var(--height-mini);
+				top: var(--nav-height-mini);
 				right: 0;
 				text-align: center;
 				border: 2px solid var(--blue-3);

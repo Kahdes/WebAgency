@@ -22,6 +22,11 @@
 	// * Animations
 	//========================
 	--transition-time: .5s;
+
+	// * Navbar
+	//========================
+	--nav-height-mini: 75px;
+	--nav-height-large: 100px;
 }
 
 *,
@@ -46,10 +51,10 @@ body {
 main {
 	position: relative;
 	top: 0;
-	padding-top: 75px;
+	padding-top: var(--nav-height-mini);
 
 	@include for-small-screen-up {
-		padding-top: 100px;
+		padding-top: var(--nav-height-large);
 	}
 }
 

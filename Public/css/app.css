@@ -250,6 +250,8 @@ template {
   --font-normal: 700;
   --font-bold: 900;
   --transition-time: .5s;
+  --nav-height-mini: 75px;
+  --nav-height-large: 100px;
 }
 
 *,
@@ -275,12 +277,12 @@ body {
 main {
   position: relative;
   top: 0;
-  padding-top: 75px;
+  padding-top: var(--nav-height-mini);
 }
 
 @media all and (min-width: 1200px) {
   main {
-    padding-top: 100px;
+    padding-top: var(--nav-height-large);
   }
 }
 
@@ -498,8 +500,6 @@ textarea {
 }
 
 .nav {
-  --height-mini: 75px;
-  --height-large: 100px;
   --width-logo-mini: 68px;
   --logo-padding: 15px;
   position: fixed;
@@ -526,14 +526,14 @@ textarea {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: var(--height-mini);
+  height: var(--nav-height-mini);
 }
 
 @media all and (min-width: 1200px) {
   .nav .nav-container {
     -ms-flex-pack: distribute;
         justify-content: space-around;
-    height: var(--height-large);
+    height: var(--nav-height-large);
   }
 }
 
@@ -642,7 +642,7 @@ textarea {
       -ms-flex-direction: column;
           flex-direction: column;
   position: absolute;
-  top: var(--height-mini);
+  top: var(--nav-height-mini);
   right: 0;
   text-align: center;
   border: 2px solid var(--blue-3);
