@@ -1,53 +1,62 @@
-#home {
-	min-height: $home-min-height;
+.home {
+	--min-height-1: 550px;
+	--min-height-2: 400px;
+	--img-1: url("../images/slider/bg1.jpg");
+	--img-2: url("../images/slider/bg2.jpg");
 
-	#slider {
+	.slider {
 		position: relative;
-		height: 100%;
+		height: var(--min-height-2);
 
-		input {
+		@include for-tablet-up {
+			min-height: var(--min-height-1);
+		}
+
+		.slider-controls {
 			display: none;
 
-			&#slider-prev:checked ~ #slide {
-				background-image: map-get($home-bgs, '1');
+			&#slider-prev:checked~.slide {
+				background-image: var(--img-1);
 			}
 
 			&#slider-next:checked {
-
-				& ~ #slide {
-					background-image: map-get($home-bgs, '2');
+				&~.slide {
+					background-image: var(--img-2);
 				}
 
-				& ~ #progress {
+				&~.slide-progress {
 					width: 100%;
-				}				
+				}
 			}
 		}
 
-		label {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			position: absolute;			
-			bottom: 0;
-			width: 50%;
-			padding: 15px 0;
-			color: white;
-			font-size: $font-size-label;			
-			background-color: rgba(0,0,0,.75);
+		.slider-labels {
+			display: none;
+			background-color: rgba(0, 0, 0, .75);
 			cursor: pointer;
+
+			@include for-tablet-up {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: absolute;
+				bottom: 0;
+				width: 50%;
+				padding: 10px 0 15px 0;
+				color: white;
+				font-size: $font-size-label;
+			}
 
 			&[for=slider-prev],
 			&[for=slider-next] {
 				@include for-small-screen-up {
 					top: 0;
-					width: 10%;
+					width: 100px;
 					padding: 0;
 					background-color: transparent;
-					transition: all var(--transition-time);
 
 					&:hover {
-						background-color: rgba(0,0,0,.25);
+						background-color: rgba(0, 0, 0, .25);
 					}
 				}
 			}
@@ -57,77 +66,88 @@
 			}
 
 			&[for=slider-next] {
-				flex-direction: row-reverse;
 				right: 0;
-			}			
+			}
 		}
 
-		#slide {
-			min-height: $home-min-height !important;
+		.slide {
+			height: var(--min-height-2);
 			background-repeat: no-repeat;
-			background-position: 80%;
-			transition: all var(--transition-time);
+			background-position: left;
+			transition: background-image var(--transition-time);
 
 			@include for-tablet-up {
-				background-position: 90%;
+				min-height: var(--min-height-1);
+				background-position: 75%;
 			}
 
-			@include for-small-screen-up {
-				background-position: right;
-			}
-
-			#slide-text {
+			.slide-text {
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
-				align-content: center;				
+				align-content: center;
 				width: 100%;
-				height: $home-min-height - 62px;
-				padding-top: 62px;
+				height: var(--min-height-2);
 				color: white;
 				text-align: center;
 				font-weight: var(--font-bold);
-				background-color: rgba(0,0,0,.25);
+				background-color: rgba(0, 0, 0, .25);
+
+				@include for-tablet-up {
+					height: calc(var(--min-height-1) - 57px);
+				}
 
 				@include for-small-screen-up {
 					justify-content: center;
 					width: 40%;
-					height: $home-min-height;
+					height: var(--min-height-1);
 					margin: 0 15%;
 					padding-top: 0;
-					text-align: left;					
+					text-align: left;
 					background-color: transparent;
 				}
 
-				h1 {
-					margin-bottom: 10px;				
-					font-size: 2.5em;
+				&>*:not(:last-child) {
+					margin-bottom: 15px;
+				}
+
+				.slide-title {
+					font-size: 2rem;
 					text-transform: uppercase;
 
-					span {
-						color: var(--blue-1);
+					@include for-tablet-up {
+						font-size: 2.5rem;
+					}
+
+					.slide-keyword {
+						color: var(--blue-2);
+
+						@include for-small-screen-up {
+							color: var(--blue-1);
+						}
 					}
 				}
 
-				button {
+				.slide-info {
 					@extend %button;
-					width: 250px;
-
-					@include for-small-screen-up {
-						width: 125px;
-					}
+					padding: 10px;
 				}
 			}
 		}
 
-		#progress {
+		.slide-progress {
+			display: none;
 			position: absolute;
 			width: 0%;
 			bottom: 0;
 			left: 0;
-			height: 5px !important;
+			height: 5px;
 			background-color: var(--blue-2);
-			transition: all var(--transition-time);
+			transition: width var(--transition-time);
+
+			@include for-tablet-up {
+				display: block;
+			}
 		}
 	}
 }

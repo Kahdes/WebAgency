@@ -133,7 +133,11 @@
 					flex-direction: row;
 					position: relative;
 					top: 0;
+					margin-right: 15px;
 					border: none;
+				}
+				@include for-small-screen-up {
+					margin-right: 0;
 				}
 
 				.link {
