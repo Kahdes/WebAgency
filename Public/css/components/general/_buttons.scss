@@ -1,0 +1,17 @@
+.button {
+    --btn-padding: 10px;
+    --btn-radius: 5px;
+
+	padding: var(--btn-padding);
+	color: white;
+	font-size: $font-size-button;
+	border: none;
+	border-radius: var(--btn-radius);
+	background-color: var(--blue-2);
+	transition: background-color var(--transition-time);					
+	cursor: pointer;
+
+	&:hover {
+		background-color: var(--blue-4);
+	}
+}

@@ -367,6 +367,24 @@ p {
   }
 }
 
+.button {
+  --btn-padding: 10px;
+  --btn-radius: 5px;
+  padding: var(--btn-padding);
+  color: white;
+  font-size: 1.25em;
+  border: none;
+  border-radius: var(--btn-radius);
+  background-color: var(--blue-2);
+  -webkit-transition: background-color var(--transition-time);
+  transition: background-color var(--transition-time);
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--blue-4);
+}
+
 input,
 textarea {
   width: 100%;
@@ -416,22 +434,6 @@ textarea::placeholder {
 
 textarea {
   resize: none;
-}
-
-.home .slider .slide .slide-text .slide-info, #contact #contact-info #contact-form button {
-  padding: 10px 0;
-  color: white;
-  font-size: 1.25em;
-  border: none;
-  border-radius: 5px;
-  background-color: var(--blue-2);
-  -webkit-transition: background-color var(--transition-time);
-  transition: background-color var(--transition-time);
-  cursor: pointer;
-}
-
-.home .slider .slide .slide-text .slide-info:hover, #contact #contact-info #contact-form button:hover {
-  background-color: var(--blue-4);
 }
 
 .section-header {
@@ -867,10 +869,6 @@ textarea {
   .home .slider .slide .slide-text .slide-title .slide-keyword {
     color: var(--blue-1);
   }
-}
-
-.home .slider .slide .slide-text .slide-info {
-  padding: 10px;
 }
 
 .home .slider .slide-progress {
