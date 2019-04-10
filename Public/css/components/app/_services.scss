@@ -1,116 +1,130 @@
-#services {
+.services {
 	background-color: white;
 
-	#services-container {
+	.services-content {
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+		align-items: center;
+		margin-top: 50px;
+		padding: 0 50px;
 
-		#services-content {
-			display: flex;
-			flex-direction: column;
+		@include for-small-screen-up {
+			flex-direction: row;
 			justify-content: space-around;
-			align-content: center;
-			align-items: center;
-			height: 100%;
-			margin-top: 50px;
+			padding: 0 10px;
+		}
 
-			@include for-tablet-up {
-				padding: 0;			
-			}
+		@include for-large-screen-up {
+			padding: 0 75px;
+		}
+
+		.services-img {
+			display: none;
 
 			@include for-small-screen-up {
-				flex-direction: row;
+				display: inherit;
 			}
 
-			#services-img,
-			#services-articles {
-				width: 100%;
-				text-align: justify;				
-			}
-
-			#services-img {
-				padding: 0;
-
+			img {
 				@include for-small-screen-up {
-					padding: 0 0 0 50px;
-				}
-
-				@include for-large-screen-up {
-					padding: 0 0 0 150px;
+					width: auto;
+					height: auto;
 				}
 			}
+		}
 
-			#services-articles {
-				padding: 0 50px;
+		.services-articles {
+			width: 100%;
 
-				@include for-tablet-up {
-					padding: 0 100px;
+			@include for-small-screen-up {
+				width: 40%;
+			}
+
+			.article {
+				position: relative;
+				display: flex;
+				align-items: center;
+
+				&:not(:last-of-type) {
+					margin-bottom: 40px;
 				}
 
-				@include for-small-screen-up {
-					padding: 0 150px 0 0;
-				}
-
-				@include for-large-screen-up {
-					padding: 0 150px 0 200px;
-				}
-
-				[id^=article-] {
+				.article-icon {
+					display: none;
 					position: relative;
-					display: flex;
-					align-items: center;
+					left: -25px;
+					border: 1px solid var(--grey-3);
+					border-radius: 50%;
 
-					&:not(:last-of-type) {
-						margin-bottom: 40px;
+					@include for-tablet-up {
+						display: inherit;
 					}
 
-					.service-icon {
-						position: relative;						
-						left: -25px;						
-						border: 1px solid var(--grey-3);
+					.circle {
+						position: absolute;
+						top: 21px;
+						right: -10px;
+						width: 20px;
+						height: 20px;
+						margin: 0;
+						color: white;
+						text-align: center;
+						opacity: 1;
+						background: var(--blue-2);
+						border: 5px solid white;
 						border-radius: 50%;
+					}
 
-						.circle {
-							position: absolute;
-							top: 21px;
-							right: -10px;
-							width: 20px;
-							height: 20px;
-							margin: 0;
-							color: white;
-							text-align: center;
-							opacity: 1;
-							background: var(--blue-2);
-							border: 5px solid white;
-							border-radius: 50%;
+					.icon {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						width: 62px;
+						height: 62px;
+
+						i {
+							margin: auto;
+							color: var(--blue-2);
+							font-size: $font-size-label;
+						}
+					}
+				}
+
+				.article-option {
+					padding: 10px;
+					border: 2px solid var(--grey-2);
+					border-radius: 5px;
+					transition: border-color var(--transition-time);
+
+					&:hover {
+						border-color: var(--blue-2);
+					}
+
+					@include for-tablet-up {
+						border: none;
+					}
+
+					.article-title {
+						margin-bottom: 10px;
+						padding-bottom: 10px;
+						font-size: 1.5rem;
+						border-bottom: 1px solid var(--grey-2);
+
+						@include for-tablet-up {
+							padding-bottom: 0;
+							border-bottom: none;
 						}
 
-						.icon {
-							display: flex;
-							justify-content: center;
-							align-items: center;
-							width: 62px;
-							height: 62px;
-							
-							i {
-								margin: auto;
-								color: var(--blue-2);
-								font-size: $font-size-label;
+						i {
+							margin-right: 10px;
+							color: var(--blue-2);
+
+							@include for-tablet-up {
+								display: none;
 							}
 						}
-					}					
-				}
-			}
-
-			#services-img {
-				display: none;
-				text-align: center;
-
-				@include for-tablet-up {
-					display: block;
-				}
-
-				img {
-					width: 510px;
-					height: 319px;
+					}
 				}
 			}
 		}
