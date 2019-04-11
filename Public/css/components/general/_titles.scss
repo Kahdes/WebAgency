@@ -1,5 +1,8 @@
 .section-header {
 	--title-size: 2.5rem;
+	--title-margin-bottom: 50px;
+
+	margin-bottom: var(--title-margin-bottom);
 	text-align: center;
 
 	.title {

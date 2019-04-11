@@ -1,4 +1,17 @@
 .services {
+	--content-padding: 0 50px;
+	--article-margin: 40px;
+	--icon-position: -25px;
+	--icon-ratio: 65px;
+	--icon-border: 1px solid var(--grey-3);
+	--icon-mini-circle-ratio: 20px;
+	--icon-mini-circle-border: 5px solid white;
+	--article-unified-spacing: 10px;
+	--article-shadow: 0 0 5px 3px rgba(0, 0, 0, .1);
+	--article-background-gradient: linear-gradient(
+		to right, var(--blue-2), var(--blue-3)
+	);
+
 	background-color: white;
 
 	.services-content {
@@ -6,24 +19,30 @@
 		flex-direction: column;
 		align-content: center;
 		align-items: center;
-		margin-top: 50px;
-		padding: 0 50px;
+		padding: var(--content-padding);
 
 		@include for-small-screen-up {
 			flex-direction: row;
-			justify-content: space-around;
-			padding: 0 10px;
+			justify-content: space-around;			
 		}
 
 		@include for-large-screen-up {
-			padding: 0 75px;
+		}
+
+		.services-img,
+		.services-articles {
+			@include for-small-screen-up {
+				width: 40%;
+			}
 		}
 
 		.services-img {
 			display: none;
 
 			@include for-small-screen-up {
-				display: inherit;
+				display: flex;
+				justify-content: center;
+				text-align: center;
 			}
 
 			img {
@@ -35,94 +54,107 @@
 		}
 
 		.services-articles {
-			width: 100%;
-
-			@include for-small-screen-up {
-				width: 40%;
-			}
-
 			.article {
-				position: relative;
 				display: flex;
 				align-items: center;
+				justify-content: center;
+				position: relative;
 
 				&:not(:last-of-type) {
-					margin-bottom: 40px;
+					margin-bottom: var(--article-margin);
 				}
 
 				.article-icon {
 					display: none;
 					position: relative;
-					left: -25px;
-					border: 1px solid var(--grey-3);
+					left: var(--icon-position);
+					border: var(--icon-border);
 					border-radius: 50%;
 
 					@include for-tablet-up {
-						display: inherit;
-					}
-
-					.circle {
-						position: absolute;
-						top: 21px;
-						right: -10px;
-						width: 20px;
-						height: 20px;
-						margin: 0;
-						color: white;
-						text-align: center;
-						opacity: 1;
-						background: var(--blue-2);
-						border: 5px solid white;
-						border-radius: 50%;
-					}
-
-					.icon {
 						display: flex;
 						justify-content: center;
 						align-items: center;
-						width: 62px;
-						height: 62px;
+						width: var(--icon-ratio);
+						height: var(--icon-ratio);
 
 						i {
-							margin: auto;
 							color: var(--blue-2);
 							font-size: $font-size-label;
 						}
 					}
+
+					.circle {
+						position: absolute;
+						top: var(--icon-mini-circle-ratio);
+						right: -10px;
+						width: var(--icon-mini-circle-ratio);
+						height: var(--icon-mini-circle-ratio);
+						border: var(--icon-mini-circle-border);
+						border-radius: 50%;
+						background: var(--blue-2);
+					}
 				}
 
 				.article-option {
-					padding: 10px;
-					border: 2px solid var(--grey-2);
 					border-radius: 5px;
-					transition: border-color var(--transition-time);
+					box-shadow: var(--article-shadow);
 
 					&:hover {
-						border-color: var(--blue-2);
+						--article-shadow: 0 0 5px 3px rgba(0, 0, 0, .2);
 					}
 
 					@include for-tablet-up {
+						width: 60%;
 						border: none;
 					}
 
+					@include for-small-screen-up {
+						width: 80%;
+						box-shadow: none;
+
+						&:hover {
+							box-shadow: none;
+						}
+					}
+
 					.article-title {
-						margin-bottom: 10px;
-						padding-bottom: 10px;
+						padding: var(--article-unified-spacing);
+						color: white;
 						font-size: 1.5rem;
-						border-bottom: 1px solid var(--grey-2);
+						font-weight: var(--font-light);
+						border-radius: 5px 5px 0 0;
+						background-image: var(--article-background-gradient);
 
 						@include for-tablet-up {
-							padding-bottom: 0;
 							border-bottom: none;
 						}
 
+						@include for-small-screen-up {
+							margin-bottom: var(--article-unified-spacing);
+							padding: 0;
+							color: black;
+							font-weight: var(--font-normal);
+							background-image: none;
+						}
+
 						i {
-							margin-right: 10px;
-							color: var(--blue-2);
+							margin-right: var(--article-unified-spacing);
+							color: black;
 
 							@include for-tablet-up {
 								display: none;
 							}
+						}
+					}
+
+					.article-description {
+						padding: var(--article-unified-spacing);
+						text-align: justify;
+
+						@include for-small-screen-up {
+							padding: 0;
+							text-align: left;
 						}
 					}
 				}
