@@ -1,22 +1,3 @@
-// ==========================================================================
-// WebAgency variables
-// ==========================================================================
-//
-// Table of Contents:
-//
-//  1. Colors
-//  2. Sizes / Margin & Padding
-//	3. Transition & Animations
-//  4. Fonts
-//  5. Buttons
-//	6. Forms
-//  7. Nav
-//  8. Home
-//  9. Services
-//  10. Portfolio
-//  11. Contact
-
-
 // 2. Sizes / Margin & Padding
 // ==========================================================================
 
@@ -28,23 +9,3 @@ $tablet-up: 769px;
 // ==========================================================================
 
 $font-size-label: 2em;
-
-// 5. Forms
-// ==========================================================================
-
-// 10. Portfolio
-// ==========================================================================
-
-$portfolio-selectors: ("works", "creative", "corporate", "portfolio");
-$portfolio-sl-radius: 5px 0 0 5px;
-$portfolio-sr-radius: 0 5px 5px 0;
-
-$portfolio-grid-gap: 15px;
-
-$portfolio-bg-width: 300px;
-$portfolio-bg-height: 200px;
-
-$portfolio-bgs: (1,	2, 3, 4, 5, 6, 7, 8);
-
-// 11. Contact
-// ==========================================================================

@@ -1,199 +1,156 @@
-#portfolio {
+.portfolio {
+	$portfolio-selectors: ("works", "creative", "corporate", "portfolio");
+	$portfolio-bgs: (1, 2, 3, 4, 5, 6, 7, 8);
+
+	--selector-left-radius: 5px 0 0 5px;
+	--selector-right-radius: 0 5px 5px 0;
+	--grid-row-gap: 15px;
+	--project-width: 300px;
+	--project-height: 200px;
+	--infos-height: 65px;
+
 	background-color: var(--beige);
 
-	#portfolio-container {
-		input {
-			display: none;
-		}
+	input[name=selectors] { display: none; }
 
-		@each $input in $portfolio-selectors {
-			#selector-#{$input}:checked {
-				& ~ #portfolio-selectors   {
-					#selectors {
-						.selector[for=selector-#{$input}] {
-							color: white;
-							background-color: var(--blue-2) !important;
-
-							i {
-								opacity: 1;
-							}
-						}
-					}					
+	@each $input in $portfolio-selectors {
+		#selector-#{$input}:checked {
+			&~.portfolio-selectors {
+				.selectors {
+					.selector[for=selector-#{$input}] {
+						color: white;
+						background-color: var(--blue-2) !important;
+					}
 				}
+			}
 
-				& ~ #portfolio-content {
-					#portfolio-articles {
-						@if $input == "works" {
-							.project {
-								display: block;
-							}
-						} @else if $input == "creative" {
-							.project#project-1,
-							.project#project-2,
-							.project#project-3 {
-								display: block;
-							}
-						} @else if $input == "corporate" {
-							.project#project-4,
-							.project#project-5,
-							.project#project-6{
-								display: block;
-							}
-						} @else if $input == "portfolio" {
-							.project#project-7,
-							.project#project-8 {
-								display: block;
-							}
-						}
+			&~.portfolio-content {
+				.portfolio-articles {
+					@if $input=="works" {
+						.project { display: block; }
+					} @else if $input=="creative" {
+						.creative { display: block; }
+					}	@else if $input=="corporate" {
+						.corporate { display: block; }
+					}	@else if $input=="portfolio" {
+						.portfolio { display: block; }
 					}
 				}
 			}
 		}
+	}
 
-		#portfolio-selectors {
-			margin: 50px 0;
-			text-align: center;
+	.portfolio-selectors {
+		margin-bottom: 50px;
+		text-align: center;
 
-			#selectors {
-				display: flex;
-				justify-content: center;
+		.selectors {
+			display: flex;
+			justify-content: center;
 
-				label {
-					position: relative;
-					padding: 10px 5px;
-					color: black;
-					text-align: center;
-					font-weight: var(--font-light);					
-					background-color: var(--grey-2);
-					transition: all var(--transition-time);
-					cursor: pointer;
+			.selector {
+				width: 25%;
+				position: relative;
+				padding: 10px 0;
+				background-color: var(--grey-2);
+				cursor: pointer;
 
-					@include for-tablet-up {
-						padding: 10px;
-					}
-
-					&:first-of-type {
-						border-radius: $portfolio-sl-radius;
-					}
-
-					&:last-of-type {
-						border-radius: $portfolio-sr-radius;
-					}
-
-					&:hover {
-						background-color: var(--blue-2);
-					}
-
-					i {
-						position: absolute;
-						bottom: -19px;
-						left: 38%;						
-						color: var(--blue-4);
-						font-size: $font-size-label;
-						opacity: 0;
-						transition: opacity var(--transition-time);
-					}
-				}
-
-				label:hover {
+				&:hover {
 					color: white;
 					background-color: var(--blue-2);
+				}
 
-					i {
-						opacity: 1;
-					}
+				@include for-tablet-up {
+					width: inherit;
+					padding: 10px;
+
+					&:first-of-type {	border-radius: var(--selector-left-radius);	}
+					&:last-of-type { border-radius: var(--selector-right-radius);	}
 				}
 			}
 		}
+	}
 
-		#portfolio-content {
-		
-			#portfolio-articles {
-				display: grid;
-				grid-template:
-					"." 1fr
-					/ 1fr;
-				grid-gap: $portfolio-grid-gap;
-				align-items: stretch;
-				justify-items: center;
-				justify-content: space-evenly;
+	.portfolio-content {
+		.portfolio-articles {
+			display: grid;
+			grid-template-rows: auto;
+			grid-template-columns: repeat(
+				auto-fit, minmax(calc(var(--project-width) * 0.84), 1fr)
+			);
+			justify-items: center;
+			grid-row-gap: var(--grid-row-gap);
 
-				@include for-tablet-up {
-					margin: 0 30px;			
-					grid-template:
-						". ."
-						/ $portfolio-bg-width $portfolio-bg-width;
+			@include for-tablet-up {
+				grid-template-columns: repeat(3, 1fr);
+			}
+
+			@include for-small-screen-up {
+				grid-template-columns: repeat(
+					auto-fit, minmax(var(--project-width), 1fr)
+				);
+				grid-row-gap: calc(var(--grid-row-gap) * 2);
+				
+			}
+
+			@include for-large-screen-up { padding: 0 100px; }
+
+			.project {
+				display: none;
+				position: relative;
+				width: calc(var(--project-width) * 0.84);
+				height: calc(var(--project-height) * 0.84);
+				background-size: cover;
+				background-repeat: no-repeat;
+
+				@include for-small-screen-up {
+					width: var(--project-width);
+					height: var(--project-height);
 				}
 
-				@include for-large-screen-up {
-					grid-template:	
-						". . . ."
-						/ $portfolio-bg-width $portfolio-bg-width $portfolio-bg-width $portfolio-bg-width
-				}
-
-				.project {
-					display: none;
-					position: relative;
-					width: $portfolio-bg-width;
-					height: $portfolio-bg-height;
-					background-size: 100% 100% !important;
-
-					@each $bg-i in $portfolio-bgs {
-						&#project-#{$bg-i} {
-							@if ($bg-i < 10) {
-								background: url("../images/portfolio/0#{$bg-i}.jpg") no-repeat;
-							}					
+				@each $bg-i in $portfolio-bgs {
+					&#project-#{$bg-i} {
+						@if ($bg-i < 10) {
+							background-image: url("../images/portfolio/0#{$bg-i}.jpg");
 						}
 					}
+				}
 
-					& > div {
-						position: absolute;					
-						width: 100%;
-						height: 0;
-						bottom: 0;
-						padding: 0 10px;
-						color: white;
+				&:hover .project-infos {
+					opacity: 1;
+					height: var(--infos-height);
+					padding: 10px;
+
+					.eye { animation: portfolio-eye 4s .125s ease-out infinite;	}
+				}
+
+				.project-infos {
+					position: absolute;
+					bottom: 0;
+					width: 100%;
+					height: 0;
+					padding: 0 10px;
+					color: white;
+					opacity: 0;
+					background-color: rgba(0, 0, 0, .5);
+					transition: all var(--transition-time);
+
+					.eye {
+						position: absolute;
+						top: -19px;
+						right: 7.5%;
+						width: 39px;
+						height: 39px;
+						text-align: center;
 						opacity: 0;
-						background-color: rgba(0,0,0,.5);
-						transition: all var(--transition-time);
+						border: 2px solid white;
+						border-radius: 50%;
+						background: var(--blue-2);
 
-
-						span {						
-							position: absolute;
-							text-align: center;
-							width: 39px;
-							height: 39px; 
-							top: -19px;
-							right: 7.5%;
-							border: 2px solid white;
-							border-radius: 50%;
-							opacity: 0;
-							background: var(--blue-2);						
-
-							i {
-								padding-top: 9.5px;
-							}
-						}
-
-						h4 {
-							margin-bottom: 10px;
-							font-size: 18px;
-						}
-
-						p {
-							font-size: .95em;
-						}
+						i { padding-top: 10px; }
 					}
 
-					&:hover > div {
-						opacity: 1;
-						height: 78px;
-						padding: 15px 10px;
-
-						span {
-							animation: portfolio-eye 4s .125s ease-out infinite;
-						}
-					}
+					.project-title { margin-bottom: 10px;	}
 				}
 			}
 		}
