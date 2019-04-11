@@ -1,6 +1,13 @@
 .section-header {
 	--title-size: 2.5rem;
 	--title-margin-bottom: 50px;
+	--separator-margin: 20px 0;
+	--line-width: 150px;
+	--line-border: 1px solid var(--grey-2);
+	--circle-top: -12.5px;
+	--circle-left: 62.5px;
+	--circle-ratio: 25px;
+	--circle-border: 5px solid white;
 
 	margin-bottom: var(--title-margin-bottom);
 	text-align: center;
@@ -15,14 +22,6 @@
 	}
 
 	.separator {
-		--separator-margin: 20px 0;
-		--line-width: 150px;
-		--line-border: 1px solid var(--grey-2);
-		--circle-top: -12.5px;
-		--circle-left: 62.5px;
-		--circle-ratio: 25px;
-		--circle-border: 5px solid white;
-
 		display: flex;
 		justify-content: center;
 		margin: var(--separator-margin);

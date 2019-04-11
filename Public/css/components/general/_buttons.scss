@@ -12,7 +12,5 @@
 	transition: background-color var(--transition-time);
 	cursor: pointer;
 
-	&:hover {
-		background-color: var(--blue-4);
-	}
+	&:hover { background-color: var(--blue-4); }
 }

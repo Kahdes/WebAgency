@@ -7,9 +7,7 @@
 	box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
 	z-index: 100;
 
-	@include for-small-screen-up {
-		position: fixed;
-	}
+	@include for-small-screen-up { position: fixed; }
 
 	.nav-container {
 		display: flex;
@@ -35,23 +33,13 @@
 					&.large {
 						display: none;
 
-						@include for-tablet-up {
-							margin-left: var(--logo-margin);
-						}
-
-						@include for-small-screen-up {
-							margin-left: 0;
-						}
+						@include for-tablet-up { margin-left: var(--logo-margin);	}
+						@include for-small-screen-up { margin-left: 0; }
 					}
 
 					@include for-tablet-up {
-						&.mini {
-							display: none;
-						}
-
-						&.large {
-							display: inherit;
-						}
+						&.mini { display: none;	}
+						&.large {	display: inherit;	}
 					}
 				}
 			}
@@ -84,34 +72,20 @@
 						font-size: 1.2em;
 					}
 
-					.open {
-						display: inherit;
-					}
-
-					.close {
-						display: none;
-					}
+					.open {	display: inherit; }
+					.close { display: none; }
 				}
 
 				&:checked~.nav-trigger-label {
-					.open {
-						display: none;
-					}
-
-					.close {
-						display: inherit;
-					}
+					.open { display: none; }
+					.close { display: inherit; }
 				}
 
-				&:checked~.nav-links {
-					display: flex;
-				}
+				&:checked~.nav-links { display: flex; }
 			}
 
 			.nav-trigger-label {
-				@include for-tablet-up {
-					display: none;
-				}
+				@include for-tablet-up { display: none; }
 			}
 
 			.nav-links {
@@ -134,9 +108,7 @@
 					border: none;
 				}
 
-				@include for-small-screen-up {
-					margin-right: 0;
-				}
+				@include for-small-screen-up { margin-right: 0; }
 
 				.link {
 					display: inline-block;
@@ -144,9 +116,7 @@
 					color: black;
 					text-decoration: none;
 
-					&:hover {
-						background-color: var(--grey-2);
-					}
+					&:hover { background-color: var(--grey-2); }
 
 					@include for-tablet-up {
 						padding: 27px 10px;
@@ -157,10 +127,7 @@
 						}
 					}
 
-					@include for-tablet-up {
-						border-top: 3px solid transparent;
-					}
-
+					@include for-tablet-up { border-top: 3px solid transparent;	}
 					@include for-small-screen-up {
 						padding: 39px 25px 38px;
 						font-size: 1.125em;

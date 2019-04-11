@@ -19,9 +19,7 @@
 
 	padding: var(--section-padding);
 
-	@include for-small-screen-up {
-		--section-padding: 75px 0;
-	}
+	@include for-small-screen-up { --section-padding: 75px 0; }
 }
 
 .anchor {

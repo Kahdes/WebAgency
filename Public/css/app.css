@@ -357,8 +357,7 @@ p {
 }
 
 @-webkit-keyframes portfolio-eye {
-  0%,
-  100% {
+  0%, 100% {
     opacity: 0;
   }
   50% {
@@ -367,8 +366,7 @@ p {
 }
 
 @keyframes portfolio-eye {
-  0%,
-  100% {
+  0%, 100% {
     opacity: 0;
   }
   50% {
@@ -430,6 +428,13 @@ p {
 .section-header {
   --title-size: 2.5rem;
   --title-margin-bottom: 50px;
+  --separator-margin: 20px 0;
+  --line-width: 150px;
+  --line-border: 1px solid var(--grey-2);
+  --circle-top: -12.5px;
+  --circle-left: 62.5px;
+  --circle-ratio: 25px;
+  --circle-border: 5px solid white;
   margin-bottom: var(--title-margin-bottom);
   text-align: center;
 }
@@ -446,13 +451,6 @@ p {
 }
 
 .section-header .separator {
-  --separator-margin: 20px 0;
-  --line-width: 150px;
-  --line-border: 1px solid var(--grey-2);
-  --circle-top: -12.5px;
-  --circle-left: 62.5px;
-  --circle-ratio: 25px;
-  --circle-border: 5px solid white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -757,7 +755,7 @@ p {
     width: 50%;
     padding: 10px 0 15px 0;
     color: white;
-    font-size: 2em;
+    font-size: 2rem;
   }
 }
 
@@ -987,7 +985,7 @@ p {
   }
   .services .services-content .services-articles .article .article-icon i {
     color: var(--blue-2);
-    font-size: 2em;
+    font-size: 2rem;
   }
 }
 
@@ -1176,8 +1174,8 @@ p {
       grid-template-rows: auto;
   -ms-grid-columns: (minmax(calc(var(--project-width) * 0.84), 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(calc(var(--project-width) * 0.84), 1fr));
-  justify-items: center;
   grid-row-gap: var(--grid-row-gap);
+  justify-items: center;
 }
 
 @media all and (min-width: 769px) {
@@ -1340,14 +1338,8 @@ p {
 
 @media all and (min-width: 1200px) {
   .contact .contact-container .contact-info {
-    width: 50%;
-    text-align: left;
-  }
-}
-
-@media all and (min-width: 1200px) {
-  .contact .contact-container .contact-info {
     width: 40%;
+    text-align: left;
   }
 }
 

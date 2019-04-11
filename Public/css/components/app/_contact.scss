@@ -14,13 +14,9 @@
 		height: 100%;
 		background-color: rgba(0, 0, 0, .25);
 
-		@include for-tablet-up {
-			padding: 50px 150px;
-		}
+		@include for-tablet-up { padding: 50px 150px; }
 
-		@include for-small-screen-up {
-			justify-content: flex-end;
-		}
+		@include for-small-screen-up { justify-content: flex-end; }
 
 		.contact-info {
 			--margin-bottom: 10px;
@@ -31,12 +27,8 @@
 			background-color: rgba(255, 255, 255, .75);
 
 			@include for-small-screen-up {
-				width: 50%;
-				text-align: left;
-			}
-
-			@include for-small-screen-up {
 				width: 40%;
+				text-align: left;
 			}
 
 			.contact-address {
@@ -64,9 +56,7 @@
 				.form-submit {
 					width: 100%;
 
-					@include for-small-screen-up {
-						width: inherit;
-					}
+					@include for-small-screen-up { width: inherit; }
 				}
 			}
 		}

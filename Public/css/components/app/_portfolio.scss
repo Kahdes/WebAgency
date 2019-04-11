@@ -26,15 +26,10 @@
 
 			&~.portfolio-content {
 				.portfolio-articles {
-					@if $input=="works" {
-						.project { display: block; }
-					} @else if $input=="creative" {
-						.creative { display: block; }
-					}	@else if $input=="corporate" {
-						.corporate { display: block; }
-					}	@else if $input=="portfolio" {
-						.portfolio { display: block; }
-					}
+					@if $input=="works" {.project { display: block; }} 
+					@else if $input=="creative" {.creative { display: block; }}
+					@else if $input=="corporate" {.corporate { display: block; }} 
+					@else if $input=="portfolio" {.portfolio { display: block; }}
 				}
 			}
 		}
@@ -64,8 +59,8 @@
 					width: inherit;
 					padding: 10px;
 
-					&:first-of-type {	border-radius: var(--selector-left-radius);	}
-					&:last-of-type { border-radius: var(--selector-right-radius);	}
+					&:first-of-type { border-radius: var(--selector-left-radius); }
+					&:last-of-type { border-radius: var(--selector-right-radius); }
 				}
 			}
 		}
@@ -78,19 +73,16 @@
 			grid-template-columns: repeat(
 				auto-fit, minmax(calc(var(--project-width) * 0.84), 1fr)
 			);
-			justify-items: center;
 			grid-row-gap: var(--grid-row-gap);
+			justify-items: center;			
 
-			@include for-tablet-up {
-				grid-template-columns: repeat(3, 1fr);
-			}
+			@include for-tablet-up { grid-template-columns: repeat(3, 1fr);	}
 
 			@include for-small-screen-up {
 				grid-template-columns: repeat(
 					auto-fit, minmax(var(--project-width), 1fr)
 				);
 				grid-row-gap: calc(var(--grid-row-gap) * 2);
-				
 			}
 
 			@include for-large-screen-up { padding: 0 100px; }
@@ -150,7 +142,7 @@
 						i { padding-top: 10px; }
 					}
 
-					.project-title { margin-bottom: 10px;	}
+					.project-title { margin-bottom: 10px; }
 				}
 			}
 		}
